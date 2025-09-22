@@ -1,27 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GreenGate General Trading PLC</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenGate General Trading P.L.C</title>
+  <meta name="description" content="GreenGate General Trading – Your Gateway to Global Trade" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <h1>Welcome to GreenGate General Trading PLC</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About Us</a>
-      <a href="#">Services</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
-  <main>
-    <h2>Our Mission</h2>
-    <p>Your gateway to global trade between Ethiopia and China.</p>
-  </main>
+  <!-- Navbar -->
+  <div class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#">
+        <img src="images/logo.png" alt="East Gate logo" />
+        <span class="brand-name">GreenGate </span>
+      </a>
+      <div class="spacer"></div>
+      <nav class="menu" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Our Services</a>
+        <a href="#news">News & Insights</a>
+        <a href="#contact">Contact</a>
+        <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+      </nav>
+      <button class="icon-btn burger" id="burger" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <a href="#home" onclick="closeDrawer()">Home</a>
+    <a href="#about" onclick="closeDrawer()">About Us</a>
+    <a href="#services" onclick="closeDrawer()">Our Services</a>
+    <a href="#news" onclick="closeDrawer()">News & Insights</a>
+    <a href="#contact" onclick="closeDrawer()">Contact</a>
+    <a href="#" onclick="toggleTheme();closeDrawer()">Toggle Theme</a>
+  </aside>
+
+  <!-- Hero / Carousel -->
+  <section id="home" class="hero" aria-label="Hero">
+    <div class="slide active" style="background-image:url('images/hero-1.jpg')"></div>
+    <div class="slide" style="background-image:url('images/hero-2.jpg')"></div>
+    <div class="slide" style="background-image:url('images/hero-3.jpg')"></div>
+    <div class="overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1>GreenGate Embarks on a Journey of Growth and Partnership</h1>
+      <p>GreenGate General Trading is committed to creating meaningful impact across sectors.</p>
+    </div>
+    <div class="dots" role="tablist" aria-label="Slide controls"></div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="center">Our Services</h2>
+      <div class="grid">
+        <article class="card">
+          <img src="images/service-1.jpg" alt="End-to-End Work illustration" />
+          <h3>End-to-End Work</h3>
+          <p>We handle the entire supply chain from product sourcing, quality inspection, packaging, and logistics to final delivery.</p>
+        </article>
+        <article class="card">
+          <img src="images/service-2.jpg" alt="Direct Sourcing" />
+          <h3>Direct Sourcing</h3>
+          <p>We purchase goods directly from trusted manufacturers for better pricing, transparency and quality control at the source.</p>
+        </article>
+        <article class="card">
+          <img src="images/service-3.jpg" alt="Importing to China" />
+          <h3>Importing to China</h3>
+          <p>Entering China’s market? We act as your legal representative and logistics partner to move products efficiently.</p>
+        </article>
+      </div>
+      <div class="center" style="margin-top:26px">
+        <a class="btn" href="#all-services">More Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>© 2025 GreenGate General Trading PLC</p>
+    © <span id="year"></span> GreenGate General Trading P.L.C • All rights reserved
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
