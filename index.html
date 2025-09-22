@@ -1,122 +1,207 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>GreenGate General Trading P.L.C</title>
-  <meta name="description" content="GreenGate General Trading – Your Gateway to Global Trade" />
+  <meta name="description" content="GreenGate — Your Gateway to Global Trade!" />
+  <link rel="icon" href="/images/logos/Greengate.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root{
+      --bg:#0f172a; --bg2:#111827; --panel:#1f2937; --muted:#94a3b8;
+      --text:#e5e7eb; --brand:#22c55e; --brand-2:#16a34a; --shadow:0 10px 24px rgba(0,0,0,.35);
+    }
+    [data-theme="light"]{
+      --bg:#ffffff; --bg2:#f8fafc; --panel:#f1f5f9; --muted:#475569; --text:#0f172a;
+      --brand:#15803d; --brand-2:#166534; --shadow:0 10px 24px rgba(0,0,0,.12);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    /* Nav */
+    .nav{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.15));backdrop-filter:blur(6px)}
+    .nav-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:14px;padding:12px 18px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text)}
+    .brand img{width:40px;height:40px;border-radius:10px;object-fit:cover}
+    .brand span{font-weight:800}
+    .spacer{flex:1}
+    .menu{display:flex;gap:18px}
+    .menu a{color:var(--text);text-decoration:none;font-weight:600;opacity:.9}
+    .menu a:hover{opacity:1}
+    .icon-btn{width:36px;height:36px;border-radius:10px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.08);display:grid;place-items:center;cursor:pointer}
+    /* Hero */
+    .hero{position:relative;height:62vh;min-height:420px;display:grid;place-items:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background-position:center;background-size:cover;filter:brightness(.55);opacity:.95}
+    .hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at center, rgba(0,0,0,.2), rgba(0,0,0,.55))}
+    .hero-wrap{position:relative;z-index:2;text-align:center;padding:0 18px}
+    .hero h1{font-size:clamp(28px,6vw,64px);line-height:1.05;margin:0 0 10px;font-weight:800}
+    .hero p{font-size:clamp(14px,2vw,20px);opacity:.95;margin:0}
+    /* Section */
+    .section{padding:56px 18px;background:linear-gradient(180deg,var(--bg),var(--bg2))}
+    .container{max-width:1200px;margin:auto}
+    h2.center{font-size:32px;margin:0 0 18px;text-align:center;font-weight:800}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    @media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:680px){.menu{display:none}.grid{grid-template-columns:1fr}}
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.08);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;transition:transform .2s ease,box-shadow .2s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(0,0,0,.35)}
+    .card img{width:100%;height:170px;object-fit:cover;background:#0b1220}
+    .card-body{padding:14px}
+    .card-body h3{margin:6px 0 6px;font-size:20px}
+    .card-body p{margin:0;color:var(--muted)}
+    .btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;padding:12px 18px;border-radius:12px;font-weight:700;border:0;cursor:pointer}
+    .btn:hover{background:var(--brand-2)}
+    /* Footer */
+    footer{padding:26px 18px;border-top:1px solid rgba(255,255,255,.1);background:var(--bg2);color:var(--muted);text-align:center}
+  </style>
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Nav -->
   <div class="nav">
     <div class="nav-inner">
-      <a class="brand" href="#">
-        <img src="images/logo.png" alt="East Gate logo" />
-        <span class="brand-name">GreenGate </span>
+      <a class="brand" href="/">
+        <img src="/images/logos/Greengate.png" alt="GreenGate logo" onerror="this.src='https://dummyimage.com/80x80/16a34a/ffffff&text=GG'"/>
+        <span>GreenGate</span>
       </a>
       <div class="spacer"></div>
       <nav class="menu" aria-label="Primary">
         <a href="#home">Home</a>
-        <a href="#about">About Us</a>
         <a href="#services">Our Services</a>
-        <a href="#news">News & Insights</a>
+        <a href="#news">News</a>
         <a href="#contact">Contact</a>
-        <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">🌙</button>
+        <button id="themeBtn" class="icon-btn" title="Toggle theme">🌙</button>
       </nav>
-      <button class="icon-btn burger" id="burger" aria-label="Open menu">☰</button>
     </div>
   </div>
 
-  <!-- Mobile Drawer -->
-  <aside class="drawer" id="drawer" aria-hidden="true">
-    <a href="#home" onclick="closeDrawer()">Home</a>
-    <a href="#about" onclick="closeDrawer()">About Us</a>
-    <a href="#services" onclick="closeDrawer()">Our Services</a>
-    <a href="#news" onclick="closeDrawer()">News & Insights</a>
-    <a href="#contact" onclick="closeDrawer()">Contact</a>
-    <a href="#" onclick="toggleTheme();closeDrawer()">Toggle Theme</a>
-  </aside>
-
-  <!-- Hero / Carousel -->
+  <!-- Hero -->
   <section id="home" class="hero" aria-label="Hero">
-    <div class="slide active" style="background-image:url('images/hero-1.jpg')"></div>
-    <div class="slide" style="background-image:url('images/hero-2.jpg')"></div>
-    <div class="slide" style="background-image:url('images/hero-3.jpg')"></div>
-    <div class="overlay" aria-hidden="true"></div>
-    <div class="hero-content">
-      <h1>GreenGate Embarks on a Journey of Growth and Partnership</h1>
-      <p>GreenGate General Trading is committed to creating meaningful impact across sectors.</p>
+    <div class="hero-bg" id="heroBg" style="background-image:url('/images/news/greengate_partnership.png')"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-wrap">
+      <h1 id="heroTitle">GreenGate — Your Gateway to Global Trade</h1>
+      <p id="heroSubtitle">Import–export solutions between Ethiopia, China & beyond.</p>
     </div>
-    <div class="dots" role="tablist" aria-label="Slide controls"></div>
   </section>
 
   <!-- Services -->
   <section id="services" class="section">
     <div class="container">
       <h2 class="center">Our Services</h2>
-      <div class="grid">
-        <article class="card">
-          <img src="images/service-1.jpg" alt="End-to-End Work illustration" />
-          <h3>End-to-End Work</h3>
-          <p>We handle the entire supply chain from product sourcing, quality inspection, packaging, and logistics to final delivery.</p>
-        </article>
-        <article class="card">
-          <img src="images/service-2.jpg" alt="Direct Sourcing" />
-          <h3>Direct Sourcing</h3>
-          <p>We purchase goods directly from trusted manufacturers for better pricing, transparency and quality control at the source.</p>
-        </article>
-        <article class="card">
-          <img src="images/service-3.jpg" alt="Importing to China" />
-          <h3>Importing to China</h3>
-          <p>Entering China’s market? We act as your legal representative and logistics partner to move products efficiently.</p>
-        </article>
+      <div class="grid" id="servicesGrid">
+        <!-- Filled by JS from /data/services-en.json -->
       </div>
-      <div class="center" style="margin-top:26px">
-        <a class="btn" href="#all-services">More Services</a>
+      <p style="text-align:center;margin-top:22px">
+        <a class="btn" href="#contact">Get Started</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- News (simple) -->
+  <section id="news" class="section" style="padding-top:0">
+    <div class="container">
+      <h2 class="center">News & Updates</h2>
+      <div id="newsList" class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+        <!-- Filled by JS from /data/news-en.json -->
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer>
+  <!-- Footer / Contact -->
+  <footer id="contact">
+    <div id="contactWrap">
+      <!-- Filled by JS from /data/contact-info-en.json -->
+    </div>
     © <span id="year"></span> GreenGate General Trading P.L.C • All rights reserved
   </footer>
 
-  <script src="js/script.js"></script>
   <script>
-async function loadJSON(path) {
-  const res = await fetch(path, { cache: "no-store" });
-  if (!res.ok) throw new Error(`Failed to load ${path}`);
-  return res.json();
-}
+    // Year + Theme
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const setTheme = (m)=>{document.documentElement.setAttribute('data-theme',m);localStorage.setItem('gg-theme',m);document.getElementById('themeBtn').textContent=m==='dark'?'🌙':'☀️';};
+    setTheme(localStorage.getItem('gg-theme') || 'dark');
+    document.getElementById('themeBtn').onclick = ()=> setTheme((document.documentElement.getAttribute('data-theme')||'dark')==='dark'?'light':'dark');
 
-// Example: render Services cards from JSON
-async function renderServices() {
-  const data = await loadJSON('/data/services-en.json');
-  const grid = document.querySelector('.grid');
-  if (!grid) return;
-  grid.innerHTML = data.map(s => `
-    <article class="card">
-      <img src="${s.image}" alt="${s.title}">
-      <h3>${s.title}</h3>
-      <p>${s.description}</p>
-    </article>
-  `).join('');
-}
+    // Helpers
+    async function loadJSON(path){
+      const res = await fetch(path, {cache:'no-store'});
+      if(!res.ok) throw new Error('Failed '+path);
+      return res.json();
+    }
+    function escapeHTML(s){ return s.replace(/[&<>"']/g, m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 
-// Example: log company/news/contact (you can render where needed)
-Promise.all([
-  loadJSON('/data/company-info-en.json'),
-  loadJSON('/data/contact-info-en.json'),
-  loadJSON('/data/news-en.json')
-]).then(([company, contact, news]) => {
-  console.log({ company, contact, news });
-  renderServices();
-}).catch(console.error);
-</script>
+    // Render Services
+    async function renderServices(){
+      try{
+        const services = await loadJSON('/data/services-en.json');
+        const grid = document.getElementById('servicesGrid');
+        grid.innerHTML = services.map(s => `
+          <article class="card">
+            <img src="${escapeHTML(s.image)}" alt="${escapeHTML(s.title)}" />
+            <div class="card-body">
+              <h3>${escapeHTML(s.title)}</h3>
+              <p>${escapeHTML(s.description)}</p>
+            </div>
+          </article>
+        `).join('');
+      }catch(e){ console.error(e); }
+    }
+
+    // Render News (first 3 items)
+    async function renderNews(){
+      try{
+        const news = await loadJSON('/data/news-en.json');
+        // Set hero using latest news image/title if available
+        if (Array.isArray(news) && news.length){
+          const latest = news[0];
+          if (latest.images && latest.images[0]){
+            document.getElementById('heroBg').style.backgroundImage = `url('${latest.images[0]}')`;
+          }
+          document.getElementById('heroTitle').textContent = latest.title || 'GreenGate — Your Gateway to Global Trade';
+          document.getElementById('heroSubtitle').textContent = latest.summary || latest.location || 'Import–export solutions between Ethiopia, China & beyond.';
+        }
+        const list = document.getElementById('newsList');
+        list.innerHTML = news.slice(0,3).map(n => `
+          <article class="card">
+            <img src="${(n.images && n.images[0]) ? n.images[0] : '/images/news/greengate_partnership.png'}" alt="${escapeHTML(n.title)}" />
+            <div class="card-body">
+              <h3>${escapeHTML(n.title)}</h3>
+              <p>${escapeHTML((n.summary || n.content || '').toString()).slice(0,140)}...</p>
+            </div>
+          </article>
+        `).join('');
+      }catch(e){ console.error(e); }
+    }
+
+    // Render Footer Contact
+    async function renderContact(){
+      try{
+        const c = await loadJSON('/data/contact-info-en.json');
+        document.getElementById('contactWrap').innerHTML =
+          `<p>
+            <strong>Contact:</strong> ${escapeHTML(c.email)} •
+            ${c.phoneNumbers ? c.phoneNumbers.map(p=>`<span>${escapeHTML(p)}</span>`).join(' • ') : ''}
+           </p>
+           <p>${escapeHTML(c.address || '')}</p>`;
+      }catch(e){ console.error(e); }
+    }
+
+    // Company meta (title, description)
+    async function applyCompanyMeta(){
+      try{
+        const k = await loadJSON('/data/company-info-en.json');
+        document.title = k.name || 'GreenGate General Trading P.L.C';
+        const desc = document.querySelector('meta[name="description"]');
+        if(desc) desc.setAttribute('content', k.description || 'Your Gateway to Global Trade');
+      }catch(e){ console.error(e); }
+    }
+
+    // Init
+    (async function init(){
+      await Promise.all([applyCompanyMeta(), renderServices(), renderNews(), renderContact()]);
+    })();
+  </script>
 </body>
 </html>
