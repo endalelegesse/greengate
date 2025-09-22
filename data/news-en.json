@@ -1,0 +1,45 @@
+[
+  {
+    "id": 4,
+    "title": "GreenGate General Trading Business Launch Video",
+    "date": "2025-09-11",
+    "location": "Addis Ababa",
+    "content": "GreenGate General Trading first promotion video on TikTok: https://www.tiktok.com/@greengatetrade.\n\nGreenGate — Your Gateway to Global Trade!",
+    "images": [
+      "/images/news/video1.mp4",
+      "/images/news/banner.png"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "GreenGate Embarks on a Journey of Growth and Partnership",
+    "date": "2025-09-08",
+    "location": "Addis Ababa",
+    "summary": "GreenGate General Trading is committed to creating meaningful impact across trade and development sectors.",
+    "content": "As GreenGate General Trading PLC begins its operations, the company is committed to driving sustainable growth and fostering strong partnerships across Ethiopia and beyond. Guided by its vision, GreenGate is investing in transparent trade services, value-driven initiatives, and long-term collaborations that benefit clients, businesses, and communities alike.",
+    "images": [
+      "/images/news/greengate_partnership.png"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "GreenGate Obtains Business License from the Federal Ministry of Trade and Regional Integration (Addis Ababa Branch)",
+    "date": "2025-09-02",
+    "location": "Addis Ababa",
+    "content": "On September 02, 2025, GreenGate General Trading PLC obtained several business licenses. These include: Import trade in stationery materials, paper and paper products; import trade in metal and non‑metal scraps; import trade in electrical equipment and appliances; import trade in communication, computer and related equipment; import of developed software; import trade in textile fiber, cotton thread and apparel; import trade in leather and related products; importing of vehicles; vehicle bodies and trailers; and importing of vehicle spare parts, regulatory equipment and jewelry/decor supplies.",
+    "images": [
+      "/images/news/business_license.png"
+    ]
+  },
+  {
+    "id": 1,
+    "title": "GreenGate General Trading Signs Partnership Agreement with Dashen Bank",
+    "date": "2025-09-04",
+    "location": "Addis Ababa",
+    "summary": "GreenGate General Trading PLC has officially entered into a partnership agreement with Dashen Bank to strengthen financial and trade services.",
+    "content": "On September 04, 2025, GreenGate General Trading PLC proudly signed a partnership agreement with Dashen Bank S.C. in Addis Ababa. This strategic collaboration is designed to enhance GreenGate’s financial capabilities, ensuring seamless trade transactions, stronger support for import–export operations, and improved access to global markets. The agreement reflects GreenGate’s commitment to building trusted partnerships that empower Ethiopian businesses to thrive internationally, while reinforcing Dashen Bank’s role as a leading financial institution driving trade and investment in Ethiopia.",
+    "images": [
+      "/images/news/partnership.png"
+    ]
+  }
+]

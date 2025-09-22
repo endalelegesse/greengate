@@ -87,5 +87,36 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script>
+async function loadJSON(path) {
+  const res = await fetch(path, { cache: "no-store" });
+  if (!res.ok) throw new Error(`Failed to load ${path}`);
+  return res.json();
+}
+
+// Example: render Services cards from JSON
+async function renderServices() {
+  const data = await loadJSON('/data/services-en.json');
+  const grid = document.querySelector('.grid');
+  if (!grid) return;
+  grid.innerHTML = data.map(s => `
+    <article class="card">
+      <img src="${s.image}" alt="${s.title}">
+      <h3>${s.title}</h3>
+      <p>${s.description}</p>
+    </article>
+  `).join('');
+}
+
+// Example: log company/news/contact (you can render where needed)
+Promise.all([
+  loadJSON('/data/company-info-en.json'),
+  loadJSON('/data/contact-info-en.json'),
+  loadJSON('/data/news-en.json')
+]).then(([company, contact, news]) => {
+  console.log({ company, contact, news });
+  renderServices();
+}).catch(console.error);
+</script>
 </body>
 </html>

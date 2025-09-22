@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "End-to-End Work",
+    "description": "From sourcing to delivery, we manage the entire supply chain. Our services include supplier verification, quality inspection, packaging, logistics, and customs clearance. With GreenGate handling every step, you can focus on growing your business with confidence.",
+    "image": "/images/services/end_to_end_supply.png"
+  },
+  {
+    "id": 2,
+    "title": "Direct Sourcing",
+    "description": "We source directly from trusted manufacturers in China and other markets, cutting out unnecessary middlemen. This ensures better pricing, full transparency, and strict quality control at the source.",
+    "image": "/images/services/sourcing_and_export.png"
+  },
+  {
+    "id": 3,
+    "title": "Importing to Ethiopia",
+    "description": "We simplify the process of bringing products into Ethiopia. GreenGate ensures that all import procedures, documentation, and compliance requirements are handled smoothly on your behalf.",
+    "image": "/images/services/import_to_ethiopia.png"
+  },
+  {
+    "id": 4,
+    "title": "Exporting to China & Beyond",
+    "description": "If you want to market Ethiopian products abroad, GreenGate facilitates exports to China and international markets, backed by our legal trade license and reliable partnerships.",
+    "image": "/images/services/export_to_china.png"
+  },
+  {
+    "id": 5,
+    "title": "On-Site Procurement Support in China",
+    "description": "Planning to visit China? Our team provides local support to help you identify, evaluate, and secure the right products and services during your stay.",
+    "image": "/images/services/on-site.png"
+  }
+]
